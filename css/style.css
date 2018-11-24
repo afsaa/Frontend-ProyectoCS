@@ -1,31 +1,40 @@
-body, html {
-    height: 100%;
+body,
+html {
+  height: 100%;
 }
 
 .bgIndex {
-    background-image: url("../img/fondo.jpg");
+  background-image: url("../img/fondo.jpg");
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .bgCanciones {
-    background-image: url("../img/fondoCanciones.jpeg");
+  background-image: url("../img/fondoCanciones.jpeg");
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .h-100 {
-    height: 100%;
+  height: 100%;
 }
 
 .table {
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-    margin: 0px auto;
-    float: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  float: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
 }
