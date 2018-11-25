@@ -23,7 +23,7 @@
     />
 
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
   </head>
 
   <body class="bgCanciones">
@@ -39,7 +39,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr onclick="cargarDetalles(this)">
             <th scope="row">Canción 1</th>
             <td>
               <button class="btn btn-success">
@@ -60,8 +60,7 @@
             </td>
             <td><p>Votos</p></td>
           </tr>
-
-          <tr>
+          <tr onclick="cargarDetalles(this)">
             <th scope="row">Canción 2</th>
             <td>
               <button class="btn btn-success">
@@ -82,7 +81,7 @@
             </td>
             <td><p>Votos</p></td>
           </tr>
-          <tr>
+          <tr onclick="cargarDetalles(this)">
             <th scope="row">Canción 3</th>
             <td>
               <button class="btn btn-success">
@@ -132,6 +131,9 @@
                 <li id="Detalle4"></li>
                 <li id="Detalle5"></li>
                 <li id="Detalle6"></li>
+                <li id="Detalle7"></li>
+                <li id="Detalle8"></li>
+                <li id="Detalle9"></li>
               </ul>
             </div>
             <div class="modal-footer">
