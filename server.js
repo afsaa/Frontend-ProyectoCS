@@ -97,15 +97,38 @@ function temporalQueueOperations(
             // Pasamos a string el mensaje recibido y separamos la canciones con el caracter |.
             msg = msg.content.toString();
             msg = msg.split("|||");
-            console.log(msg);
+            //console.log(msg);
             // Escribimos en el archivo json los datos.
             fs.writeFile("details.json", "[" + msg + "]", error => {
               /* handle error */
             });
-            var song1 = JSON.parse(msg[0]);
-            var song2 = JSON.parse(msg[1]);
-            var song3 = JSON.parse(msg[2]);
-            var song4 = JSON.parse(msg[3]);
+            const song1 = JSON.parse(msg[0]);
+            const song2 = JSON.parse(msg[1]);
+            const song3 = JSON.parse(msg[2]);
+            const song4 = JSON.parse(msg[3]);
+            fs.writeFile(
+              "keys.json",
+              "[{" +
+                '"song1"' +
+                ":" +
+                `"${Object.keys(song1)[0]}"` +
+                "},{" +
+                '"song2"' +
+                ":" +
+                `"${Object.keys(song2)[0]}"` +
+                "},{" +
+                '"song3"' +
+                ":" +
+                `"${Object.keys(song3)[0]}"` +
+                "},{" +
+                '"song4"' +
+                ":" +
+                `"${Object.keys(song4)[0]}"` +
+                "}]",
+              error => {
+                /* handle error */
+              }
+            );
 
             console.log(Object.keys(song1)[0]);
             console.log(Object.keys(song2)[0]);

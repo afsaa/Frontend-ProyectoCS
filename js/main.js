@@ -1,6 +1,6 @@
 //import * as amqp from "amqplib/callback_api";
 var allSongs;
-var songsList;
+var songsList = [];
 var songDetails;
 
 // Función para obtener el indice de la fila clickeada.
@@ -12,33 +12,37 @@ var songDetails;
 
 function cargarDetalles(index) {
   var songsListIndex = index.rowIndex - 1;
-  console.log("Indice de la canción actual: " + songsListIndex);
-
+  //console.log("Indice de la canción actual: " + songsListIndex);
+  fetch("../keys.json")
+    .then(res => res.json())
+    .then(data => {
+      songsList[0] = data[0].song1;
+      songsList[1] = data[1].song2;
+      songsList[2] = data[2].song3;
+      songsList[3] = data[3].song4;
+    });
   fetch("../details.json")
     .then(res => res.json())
     .then(data => {
       songDetails = data[songsListIndex];
-      //console.log(data[0].Object.keys());
-      console.log(songDetails["Ctrl + Alt + Supr"].title);
 
       document.getElementById("Detalle1").innerHTML =
-        songDetails["Ctrl + Alt + Supr"].title;
-
-      /*document.getElementById("Detalle2").innerHTML =
-        data.songsListKeys[songsListIndex].artist;
+        songDetails[songsList[songsListIndex]].title;
+      document.getElementById("Detalle2").innerHTML =
+        songDetails[songsList[songsListIndex]].artist;
       document.getElementById("Detalle3").innerHTML =
-        data.songsListKeys[songsListIndex].album;
+        songDetails[songsList[songsListIndex]].album;
       document.getElementById("Detalle4").innerHTML =
-        data.songsListKeys[songsListIndex].genre;
+        songDetails[songsList[songsListIndex]].genre;
       document.getElementById("Detalle5").innerHTML =
-        data.songsListKeys[songsListIndex].tracknumber;
+        songDetails[songsList[songsListIndex]].tracknumber;
       document.getElementById("Detalle6").innerHTML =
-        data.songsListKeys[songsListIndex].version;
+        songDetails[songsList[songsListIndex]].version;
       document.getElementById("Detalle7").innerHTML =
-        data.songsListKeys[songsListIndex].date;
+        songDetails[songsList[songsListIndex]].date;
       document.getElementById("Detalle8").innerHTML =
-        data.songsListKeys[songsListIndex].composer;
+        songDetails[songsList[songsListIndex]].composer;
       document.getElementById("Detalle9").innerHTML =
-        data.songsListKeys[songsListIndex].lyricist;*/
+        songDetails[songsList[songsListIndex]].lyricist;
     });
 }
