@@ -26,7 +26,7 @@
     <script src="./js/main.js"></script>
   </head>
 
-  <body class="bgCanciones">
+  <body class="bgCanciones" onload="cargarNombre()">
     <div class="container">
       <h2 class="text-center">CANCIONES</h2>
       <table class="table table-striped table-dark">
@@ -40,7 +40,7 @@
         </thead>
         <tbody>
           <tr onclick="cargarDetalles(this)">
-            <th scope="row">Canción 1</th>
+            <th scope="row" id="songName1">Canción 1</th>
             <td>
               <button class="btn btn-success">
                 <i class="fa fa-thumbs-up fa-md"></i>
@@ -61,7 +61,7 @@
             <td><p>Votos</p></td>
           </tr>
           <tr onclick="cargarDetalles(this)">
-            <th scope="row">Canción 2</th>
+            <th scope="row" id="songName2">Canción 2</th>
             <td>
               <button class="btn btn-success">
                 <i class="fa fa-thumbs-up fa-md"></i>
@@ -82,7 +82,7 @@
             <td><p>Votos</p></td>
           </tr>
           <tr onclick="cargarDetalles(this)">
-            <th scope="row">Canción 3</th>
+            <th scope="row" id="songName3">Canción 3</th>
             <td>
               <button class="btn btn-success">
                 <i class="fa fa-thumbs-up fa-md"></i>
@@ -103,7 +103,7 @@
             <td><p>Votos</p></td>
           </tr>
           <tr onclick="cargarDetalles(this)">
-            <th scope="row">Canción 4</th>
+            <th scope="row" id="songName4">Canción 4</th>
             <td>
               <button class="btn btn-success">
                 <i class="fa fa-thumbs-up fa-md"></i>

@@ -10,6 +10,21 @@ var songDetails;
   console.log("Index to charge the data -> " + songsListIndex);
 }*/
 
+function cargarNombre() {
+  fetch("../keys.json")
+    .then(res => res.json())
+    .then(data => {
+      songsList[0] = data[0].song1;
+      songsList[1] = data[1].song2;
+      songsList[2] = data[2].song3;
+      songsList[3] = data[3].song4;
+      document.getElementById("songName1").innerHTML = songsList[0];
+      document.getElementById("songName2").innerHTML = songsList[1];
+      document.getElementById("songName3").innerHTML = songsList[2];
+      document.getElementById("songName4").innerHTML = songsList[3];
+    });
+}
+
 function cargarDetalles(index) {
   var songsListIndex = index.rowIndex - 1;
   //console.log("Indice de la canción actual: " + songsListIndex);
