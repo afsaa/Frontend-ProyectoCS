@@ -154,10 +154,10 @@ amqp.connect(
     //persistentQueueOperations(conn, q_votos);
     // Recibimos la respuesta del servidor por medio de la cola temporal.
     temporalQueueOperations(conn, "lDz8G4", q_conexion, qSongsReceiver);
-    /*var delayInMilliseconds = 1000; //1 second
-    
-        setTimeout(function() {
-          temporalQueueOperations(conn, q_votos, qVotesReceiver);
-        }, delayInMilliseconds);*/
+    var delayInMilliseconds = 5000; //5 seconds
+
+    setTimeout(function() {
+      temporalQueueOperations(conn, "lDz8G4", q_votos, qVotesReceiver);
+    }, delayInMilliseconds);
   }
 );
